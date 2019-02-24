@@ -33,11 +33,11 @@ class Button {
             if (this.format==1){                                    
                 rect(this.x, this.y, this.sx, this.sy, 10);
                 if(this.click){tint(0,255,0)}else{tint(200,0,0)};               
-                image(img,this.x,this.y,this.sx,this.sy);
+                image(imgs[0],this.x,this.y,this.sx,this.sy);
             } else{
                 ellipse(this.x, this.y, this.sx, this.sy);
                 if(this.click){tint(0,255,0)}else{tint(200,0,0)};               
-                image(img,this.x,this.y,this.sx,this.sy);
+                image(imgs[0],this.x,this.y,this.sx,this.sy);
                 fill(this.textcol);
             }
             fill(this.textcol);
@@ -58,8 +58,9 @@ class Button {
                 this.d = dist(mx ,my ,this.x,this.y);
                 if (((this.format==1 && ((((mx<=(this.x + this.sx/2)) && (mx>=(this.x-this.sx/2))) && (((my<(this.y+this.sy/2)) && 
                 my>(this.y-this.sy/2)))))) || (this.format==0 && ((this.d < this.sx/2)))) && mouseIsPressed)
-                {   
+                {
                     this.click=true;
+                    this.um = false;
                 } else{
                     this.click=false;
                 }
@@ -68,6 +69,7 @@ class Button {
                 if ((this.format==1 && ((((mx<=(this.x + this.sx/2)) && (mx>=(this.x-this.sx/2))) && (((my<(this.y+this.sy/2)) && 
                 my>(this.y-this.sy/2)))))) || (this.format==0 && ((this.d < this.sx/2))))
                 {   
+                    this.um = false;
                     this.click=!this.click;
                 }
             }
