@@ -17,11 +17,11 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1580, 860);
+  createCanvas(screen.width, screen.height);
   users.push(new User("a", "a", "Matheus", "Fischer", 24, "Ass. Projeto", "admin"));
   users.push(new User("gerente", "1234", "Carlos", "Bieging", 53, "Coord. de Pesquisa", "operador"));
   createScreens();
-  screen=2;
+  screen=0;
 }
 function draw() {
   background(255);
@@ -120,7 +120,7 @@ function createScreens(){
   text_inputs.push(new TextInput(screen, width/2-50,height/2+50,400,45,"Sobrenome"));
   text_inputs.push(new TextInput(screen, width/2-50,height/2+100,400,45,"Idade"));
   text_inputs.push(new TextInput(screen, width/2-50,height/2+150,400,45,"Cargo"));
-  text_inputs.push(new TextInput(screen, width/2-50,height/2+150,400,45,"Acesso"));
+  text_inputs.push(new TextInput(screen, width/2-50,height/2+200,400,45,"Acesso"));
   buttons.push(new Button(screen, 100,height/10, 150, 150, 1,"Cadastro", 0, color(0)));
   buttons.push(new Button(screen, width-100,height/10, 80, 80, 1,"Exit", 0, color(0)));
 
